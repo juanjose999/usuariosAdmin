@@ -76,8 +76,107 @@ La documentación permite consultar los endpoints disponibles, parámetros, estr
 ## Ejecución del proyecto
 
 Para conocer los requisitos previos y los pasos necesarios para ejecutar la aplicación, consulta el siguiente archivo:
+Requisitos previos
 
-[INSTRUCTIONS.md](./INSTRUCTIONS.md)
+Antes de ejecutar el proyecto, necesitas tener instalado:
+
+Git
+
+Docker Desktop
+
+Asegúrate de que Docker Desktop esté iniciado.
+
+1. Clonar el repositorio
+
+Abre una terminal y ejecuta:
+
+git clone https://github.com/juanjose999/usuariosAdmin.git
+
+Ingresa a la carpeta del proyecto:
+
+cd usuariosAdmin
+
+2. Construir y ejecutar los contenedores
+
+Desde la raíz del proyecto, donde se encuentra el archivo docker-compose.yml, ejecuta:
+
+docker compose up --build
+
+Este comando construye las imágenes y levanta los dos servicios:
+
+Backend: Java + Spring Boot.
+
+Frontend: React + TypeScript.
+
+La primera ejecución puede tardar unos minutos mientras Docker descarga las imágenes y construye los proyectos.
+
+3. Acceder a la aplicación
+
+Una vez que los contenedores estén ejecutándose, puedes acceder a:
+
+Servicio
+
+URL
+
+Frontend
+
+http://localhost:5173
+
+Backend
+
+http://localhost:8080/usuario
+
+4. Comandos útiles
+
+Ejecutar los contenedores en segundo plano:
+
+docker compose up -d --build
+
+Verificar el estado de los contenedores:
+
+docker compose ps
+
+Consultar los logs:
+
+docker compose logs -f
+
+Consultar los logs de un servicio específico:
+
+docker compose logs -f backend
+docker compose logs -f frontend
+
+Detener los contenedores:
+
+docker compose down
+
+Reconstruir las imágenes después de realizar cambios:
+
+docker compose up --build
+
+5. Estructura del proyecto
+
+usuariosAdmin/
+├── backend/
+│   ├── src/
+│   ├── build.gradle
+│   └── Dockerfile
+│
+├── fronted/
+│   └── p0/
+│       ├── src/
+│       ├── package.json
+│       └── Dockerfile
+│
+├── docker-compose.yml
+└── README.md
+
+Consideraciones
+
+No es necesario instalar Java, Gradle o Node.js localmente para ejecutar la aplicación mediante Docker Compose.
+
+Docker se encarga de construir y ejecutar ambos servicios utilizando sus respectivos Dockerfile.
+
+Los comandos deben ejecutarse desde la carpeta raíz del proyecto.
 
 ## Autor
 
