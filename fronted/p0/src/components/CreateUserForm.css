@@ -1,0 +1,254 @@
+
+/* ==============================
+   TARJETA PRINCIPAL
+================================ */
+* {
+    z-index: 1000;
+    position: relative;
+}
+.create-user-card {
+    width: 100%;
+    max-width: 850px;
+    margin: 25px auto;
+    padding: 32px;
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+}
+
+.create-user-card h3 {
+    margin: 0 0 28px;
+    padding-bottom: 18px;
+    color: #1e293b;
+    font-size: 22px;
+    font-weight: 700;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+/* ==============================
+   FORMULARIO
+================================ */
+
+.create-user-form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px 20px;
+}
+
+/* ==============================
+   CAMPOS
+================================ */
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-field label {
+    color: #334155;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.form-field input,
+.form-field select {
+    width: 100%;
+    height: 44px;
+    padding: 0 13px;
+    box-sizing: border-box;
+
+    color: #1e293b;
+    background-color: #f8fafc;
+
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+
+    font-family: inherit;
+    font-size: 14px;
+
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+.form-field input::placeholder {
+    color: #94a3b8;
+}
+
+.form-field input:focus,
+.form-field select:focus {
+    background-color: #ffffff;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* ==============================
+   FECHA
+================================ */
+
+.form-field input[type="date"] {
+    cursor: pointer;
+}
+
+/* ==============================
+   BOTONES
+================================ */
+
+.create-user-actions {
+    grid-column: 1 / -1;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+
+    margin-top: 12px;
+    padding-top: 22px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.create-user-actions button {
+    min-width: 135px;
+    height: 44px;
+    padding: 0 20px;
+
+    border: none;
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 600;
+    font-family: inherit;
+
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+/* Botón principal */
+
+.btn-primary {
+    color: #ffffff;
+    background-color: #2563eb;
+}
+
+.btn-primary:hover:not(:disabled) {
+    background-color: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+.btn-primary:disabled {
+    background-color: #93c5fd;
+    cursor: not-allowed;
+}
+
+/* Botón cancelar */
+
+.btn-secondary {
+    color: #475569;
+    background-color: #f1f5f9;
+    border: 1px solid #cbd5e1 !important;
+}
+
+.btn-secondary:hover {
+    background-color: #e2e8f0;
+}
+
+/* ==============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 600px) {
+    .create-user-card {
+        padding: 22px 16px;
+    }
+
+    .create-user-form {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .create-user-actions {
+        flex-direction: column-reverse;
+    }
+
+    .create-user-actions button {
+        width: 100%;
+    }
+}
+
+
+
+/* Capa que cubre toda la ventana */
+.create-user-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+    box-sizing: border-box;
+
+    background-color: rgba(15, 23, 42, 0.65);
+
+    overflow-y: auto;
+}
+
+/* Tarjeta del formulario */
+.create-user-card {
+    width: 100%;
+    max-width: 850px;
+    max-height: calc(100vh - 40px);
+
+    margin: auto;
+    padding: 32px;
+
+    box-sizing: border-box;
+    overflow-y: auto;
+
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+
+    animation: modal-appear 0.2s ease-out;
+}
+
+/* Animación de entrada */
+@keyframes modal-appear {
+    from {
+        opacity: 0;
+        transform: translateY(-15px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (max-width: 600px) {
+    .create-user-overlay {
+        padding: 12px;
+    }
+
+    .create-user-card {
+        padding: 22px 16px;
+    }
+
+    .create-user-form {
+        grid-template-columns: 1fr;
+    }
+
+    .create-user-actions {
+        flex-direction: column-reverse;
+    }
+
+    .create-user-actions button {
+        width: 100%;
+    }
+}

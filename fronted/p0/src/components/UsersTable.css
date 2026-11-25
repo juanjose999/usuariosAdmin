@@ -1,0 +1,217 @@
+/* src/components/UsersTable.css */
+.users-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  background: #ffffff;
+
+}
+
+.users-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.9rem;
+}
+
+.users-table thead th {
+  color: #080a0c;
+  text-align: left;
+  padding: 14px 16px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  font-weight: 900;
+}
+
+.users-table thead th:first-child {
+  border-top-left-radius: 13px;
+}
+
+.users-table thead th:last-child {
+  border-top-right-radius: 13px;
+}
+
+.users-table tbody tr {
+  transition: background-color 0.18s ease;
+}
+
+.users-table tbody tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+.users-table tbody tr:hover {
+  background: #f1f5f9;
+}
+
+.users-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #e2e8f0;
+  color: #334155;
+  vertical-align: middle;
+}
+
+.users-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.cell-name {
+  font-weight: 600;
+  color: #0f172a;
+  white-space: nowrap;
+}
+
+.cell-email {
+  color: #475569;
+}
+
+.cell-doc {
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+}
+
+.cell-pass {
+  letter-spacing: 2px;
+  color: #94a3b8;
+}
+
+/* Badges para tipo de documento */
+.doc-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.doc-badge--cc {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.doc-badge--ti {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+/* Fila en modo edición */
+.row-editing {
+  background: #eef2ff !important;
+}
+
+.row-editing td {
+  vertical-align: top;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.field-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.field-group label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.users-table input,
+.users-table select {
+  width: 100%;
+  min-width: 135px;
+  padding: 8px 10px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  color: #0f172a;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.users-table input:focus,
+.users-table select:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+/* Botones de acción */
+.cell-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.cell-actions button {
+  padding: 7px 13px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.1s ease, background-color 0.15s ease;
+}
+
+.cell-actions button:active {
+  transform: scale(0.97);
+}
+
+.btn-edit {
+  background: #e0e7ff;
+  color: #3730a3;
+}
+
+.btn-edit:hover {
+  background: #c7d2fe;
+}
+
+.btn-delete {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.btn-delete:hover {
+  background: #fecaca;
+}
+
+.btn-save {
+  background: #059669;
+  color: #ffffff;
+}
+
+.btn-save:hover {
+  background: #047857;
+}
+
+.btn-cancel {
+  background: #e2e8f0;
+  color: #334155;
+}
+
+.btn-cancel:hover {
+  background: #cbd5e1;
+}
+
+.users-empty {
+  text-align: center;
+  padding: 36px 20px;
+  color: #64748b;
+  font-size: 0.95rem;
+  background: #ffffff;
+  border: 1px dashed #cbd5e1;
+  border-radius: 14px;
+}
